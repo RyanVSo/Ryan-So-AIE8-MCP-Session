@@ -1,0 +1,13 @@
+# Copy this file to .env and fill in your API keys
+
+# Tavily API Key for web search functionality
+TAVILY_API_KEY=your_tavily_api_key_here
+
+# OpenWeatherMap API Key for weather information
+# Get your free API key at: https://openweathermap.org/api
+OPENWEATHER_API_KEY=your_openweather_api_key_here
+
+# OpenAI API Key for LangGraph application
+OPENAI_API_KEY=your_openai_api_key_here
+
+

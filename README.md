@@ -82,12 +82,59 @@ The server provides a `web_search` tool that can be used to search the web for i
 
 There are a few activities for this assignment!
 
-### 🏗️ Activity #1: 
+### 🏗️ Activity #1: ✅ COMPLETED
 
 Choose an API that you enjoy using - and build an MCP server for it!
 
-### 🏗️ Activity #2: 
+**New API Tools Added:**
+- **🌤️ Weather API**: Get current weather information for any city using OpenWeatherMap API
+- **😂 Random Jokes**: Get programming jokes and general humor from official-joke-api
+- **📱 QR Code Generator**: Generate QR codes for any text using qr-server.com API
+- **🐱 Cat Facts**: Get interesting facts about cats from catfact.ninja
+- **💭 Inspirational Quotes**: Get motivational quotes from quotable.io
+
+**How to use the new tools:**
+1. Configure API keys in your `.env` file (OPENWEATHER_API_KEY is optional but recommended)
+2. Run the demo: `python demo_mcp_tools.py`
+3. Use tools through Cursor's MCP integration
+
+### 🏗️ Activity #2: ✅ COMPLETED
 
 Build a simple LangGraph application that interacts with your MCP Server.
 
-You can find details [here](https://github.com/langchain-ai/langchain-mcp-adapters)!
+**LangGraph Application Features:**
+- **Intent Analysis**: Automatically detects what the user wants (weather, jokes, etc.)
+- **Tool Selection**: Intelligently chooses the right MCP tools to use
+- **Workflow Management**: Uses LangGraph's state management for complex interactions
+- **Conversational AI**: Integrates with OpenAI's GPT models for natural responses
+
+**Files Created:**
+- `langgraph_app.py`: Main LangGraph application with full workflow
+- `demo_mcp_tools.py`: Direct testing of MCP server tools
+
+**How to run the LangGraph app:**
+1. Set up your `.env` file with required API keys:
+   ```
+   OPENAI_API_KEY=your_openai_key_here
+   TAVILY_API_KEY=your_tavily_key_here
+   OPENWEATHER_API_KEY=your_openweather_key_here  # optional
+   ```
+2. Install dependencies: `uv sync`
+3. Run the application: `python langgraph_app.py`
+
+You can find details about langchain-mcp-adapters [here](https://github.com/langchain-ai/langchain-mcp-adapters)!
+
+## 🛠️ Testing Your Setup
+
+### Test MCP Server Tools Directly
+```bash
+python demo_mcp_tools.py
+```
+
+### Test LangGraph Integration  
+```bash
+python langgraph_app.py
+```
+
+### Test Through Cursor
+Use the MCP configuration in your Cursor settings and interact with the tools through the AI assistant.
