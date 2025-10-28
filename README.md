@@ -82,12 +82,47 @@ The server provides a `web_search` tool that can be used to search the web for i
 
 There are a few activities for this assignment!
 
-### 🏗️ Activity #1: 
+### ✅ Activity #1: COMPLETED
 
-Choose an API that you enjoy using - and build an MCP server for it!
+**Weather API Integration**: Added a weather tool using the OpenWeatherMap API!
 
-### 🏗️ Activity #2: 
+The MCP server now includes:
+- `web_search` - Search the web using Tavily API
+- `roll_dice` - Roll dice with various notations (e.g., 3d6, 2d20k1)  
+- `get_weather` - Get current weather for any city with detailed information
 
-Build a simple LangGraph application that interacts with your MCP Server.
+### ✅ Activity #2: COMPLETED
+
+**LangGraph Application**: Built a complete LangGraph application that integrates with the MCP Server!
+
+Files created:
+- `mcp_langgraph_demo.py` - Main demo application with interactive and demo modes
+- `langgraph_app.py` - Alternative implementation 
+- `environment_setup.md` - Complete setup guide
+
+## 🚀 New Tools Available
+
+### Weather Tool
+```python
+get_weather(city: str, units: str = "metric") -> str
+```
+- Get current weather for any city
+- Support for metric, imperial, or kelvin units
+- Returns temperature, humidity, pressure, wind speed, visibility
+
+### Enhanced Server
+The MCP server (`server.py`) now includes robust error handling and formatted responses.
+
+## 🎮 Testing the Implementation
+
+### Option 1: Test via Cursor (MCP Client)
+1. Set up your API keys in `.env` file (see `environment_setup.md`)
+2. Update your MCP configuration in Cursor
+3. Ask Cursor: "What's the weather in Tokyo?" or "Roll 3d6 dice"
+
+### Option 2: Test via LangGraph Demo
+1. Set up API keys in `.env` file
+2. Run: `uv run python mcp_langgraph_demo.py`
+3. Choose demo mode to see examples or interactive mode to test yourself
 
 You can find details [here](https://github.com/langchain-ai/langchain-mcp-adapters)!
