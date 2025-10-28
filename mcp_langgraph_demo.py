@@ -15,8 +15,7 @@ from langgraph.graph import StateGraph, END
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, ToolMessage
 from langchain_core.tools import StructuredTool
-from langchain_core.pydantic_v1 import BaseModel, Field
-from pydantic import Field as PydanticField
+from pydantic import BaseModel, Field
 import sys
 
 # Add current directory to path to import server
@@ -40,15 +39,15 @@ class AgentState(BaseModel):
 
 # Input schemas for tools
 class WebSearchInput(BaseModel):
-    query: str = PydanticField(description="The search query to look up")
+    query: str = Field(description="The search query to look up")
 
 class DiceRollInput(BaseModel):
-    notation: str = PydanticField(description="Dice notation (e.g., '3d6', '2d20k1')")
-    num_rolls: int = PydanticField(default=1, description="Number of times to roll")
+    notation: str = Field(description="Dice notation (e.g., '3d6', '2d20k1')")
+    num_rolls: int = Field(default=1, description="Number of times to roll")
 
 class WeatherInput(BaseModel):
-    city: str = PydanticField(description="City name to get weather for")
-    units: str = PydanticField(default="metric", description="Units: metric, imperial, or kelvin")
+    city: str = Field(description="City name to get weather for")
+    units: str = Field(default="metric", description="Units: metric, imperial, or kelvin")
 
 # Create LangChain tools from MCP functions
 def create_langchain_tools():
